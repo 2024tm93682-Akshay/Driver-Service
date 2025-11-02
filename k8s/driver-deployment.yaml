@@ -12,6 +12,10 @@ spec:
       labels:
         app: driver-service
     spec:
+      initContainers:
+        - name: wait-for-postgres
+          image: busybox
+          command: ['sh', '-c', 'until nc -z postgres 5432; do echo "waiting for postgres..."; sleep 3; done;']
       containers:
         - name: driver-service
           image: driver-service:latest
@@ -27,13 +31,13 @@ spec:
             httpGet:
               path: /actuator/health
               port: 8082
-            initialDelaySeconds: 20
+            initialDelaySeconds: 25
             periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /actuator/health
               port: 8082
-            initialDelaySeconds: 15
+            initialDelaySeconds: 20
             periodSeconds: 10
           resources:
             requests:
