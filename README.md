@@ -43,11 +43,11 @@ It supports:
 
 | Method   | Endpoint            | Description           |
 | -------- | ------------------- | --------------------- |
-| `GET`    | `/api/drivers`      | Get all drivers       |
-| `GET`    | `/api/drivers/{id}` | Get driver by ID      |
-| `POST`   | `/api/drivers`      | Register new driver   |
-| `PUT`    | `/api/drivers/{id}` | Update driver details |
-| `DELETE` | `/api/drivers/{id}` | Delete driver         |
+| `GET`    | `/v1/drivers`      | Get all drivers       |
+| `GET`    | `/v1/drivers/{id}` | Get driver by ID      |
+| `POST`   | `/v1/drivers`      | Register new driver   |
+| `PUT`    | `/v1/drivers/{id}` | Update driver details |
+| `DELETE` | `/v1/drivers/{id}` | Delete driver         |
 | `GET`    | `/actuator/health`  | Health check endpoint |
 
 ---
